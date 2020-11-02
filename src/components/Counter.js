@@ -15,7 +15,7 @@ A naive developer might say 3 different slices:
 But a single slice of state is all that's needed here: the count!
 The other things can simply be _derived_ from the count itself.
 
-STEP 0:
+STEP 0:x
   Start by studying the component below, and importing the state hook.
 
 STEP 1:
@@ -61,7 +61,7 @@ export default function Counter() {
   };
   const reset = () => {
     /* STEP 6 */
-    setCount(1);
+    setCount(0);
   };
 
   const style = {
