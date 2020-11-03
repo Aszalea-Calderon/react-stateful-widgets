@@ -33,6 +33,7 @@ export default function Squares() {
     // as the argument matches the active square in state, empty string otherwise.
     // // Right-click and "inspect element" on the square to see its effect.
     if (id === squares) {
+      //If id is equal to the square coming in, make the className active, otherwise nothing
       return "active";
     } else {
       return "";
@@ -40,10 +41,11 @@ export default function Squares() {
   };
 
   const markActive = (id) => {
+    //Change the id from the array
     if (id === squares) {
-      setActiveSquare(id);
+      setSquares(null);
     } else {
-      setActiveSquare(null);
+      setSquares(id);
     }
 
     //// This is a helper used inside an _inlined_ click handler (see below).
@@ -60,7 +62,7 @@ export default function Squares() {
           // Nasty bug! We should map over a slice of state, instead of 'listOfSquareIds'.
           // We might say: "it works, though!" But if the list of squares is not state,
           // we could never add squares, change squares or remove squares in the future. Fix!
-          listOfSquareIds.map((id) => (
+          activeSquare.map((id) => (
             <div
               id={id}
               key={id}
